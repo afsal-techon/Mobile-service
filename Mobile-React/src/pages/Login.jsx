@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import axios from '../services/axios'
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const vaildationSchema = Yup.object().shape({
   email: Yup.string()
@@ -18,6 +19,10 @@ const vaildationSchema = Yup.object().shape({
 });
 
 const Login = () => {
+
+  const navigate = useNavigate()
+
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -29,6 +34,8 @@ const Login = () => {
       try {
         const { data } = await axios.post("/login",values);
         toast.success(data.message)
+        localStorage.setItem('token',data.token);
+        navigate('/admin-dashboard')
         
       } catch (error) {
         console.log(error);
