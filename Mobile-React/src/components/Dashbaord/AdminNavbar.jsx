@@ -8,8 +8,8 @@ export function AdmminNav() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-gray-100 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-gray-100 border-b border-gray-200 p-1">
+      <div className="max-w-8xl  px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand - Left side */}
           <div className="flex-shrink-0">

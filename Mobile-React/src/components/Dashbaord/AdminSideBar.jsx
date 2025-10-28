@@ -119,7 +119,7 @@ const AdminSideBar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 p-8">
+      <div className="flex-1">
         <AdmminNav/>
         
       </div>

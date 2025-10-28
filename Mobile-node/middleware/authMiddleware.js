@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 export const VerifyToken = async(req,res,next)=>{
     try{
 
-        const token = req.header("Authorization");
+        const token =   req.header("Authorization");
         if (!token) return res.status(401).send("Access Denied");
         const verified = jwt.verify(token, process.env.SECRET_KEY);  
         req.user = verified._id    
@@ -19,3 +19,4 @@ export const VerifyToken = async(req,res,next)=>{
   
 
 }
+//THIS IS OK
